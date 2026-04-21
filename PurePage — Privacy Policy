@@ -1,0 +1,39 @@
+# PurePage — Privacy Policy
+
+**Last updated: April 2026**
+
+## Overview
+
+PurePage is a Chrome extension that strips any web page down to a clean, distraction-free reading view. This policy explains how the extension handles your data.
+
+## Data collection
+
+PurePage does **not** collect, store, transmit or share any personal data with third parties.
+
+## How it works
+
+- When you click Open reader view, PurePage extracts the article content from the current tab using Mozilla's open source Readability.js library
+- The extracted content is stored temporarily in `chrome.storage.local` on your device only, to pass it to the reader view tab
+- Your reading preferences (theme, font, font size, CE highlights) are saved locally in `chrome.storage.local` and never leave your device
+- No page content or personal data is ever sent to any external server
+
+## Permissions
+
+| Permission | Reason |
+|---|---|
+| `activeTab` | To access the current tab's content for extraction |
+| `scripting` | To inject the Readability.js extraction script into the active page |
+| `storage` | To save your reading preferences and pass article content to the reader view |
+
+## Third party libraries
+
+PurePage bundles the following open source libraries, which run entirely in your browser:
+
+- **Readability.js** (Mozilla) — extracts article content from web pages
+- **OpenDyslexic** font — an optional reading font designed to improve readability for people with dyslexia
+
+Neither library transmits any data externally.
+
+## Contact
+
+PurePage is a tool built by the IT team at the Ellen MacArthur Foundation. For questions contact [it@ellenmacarthurfoundation.org](mailto:it@ellenmacarthurfoundation.org).
