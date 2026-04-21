@@ -1,39 +1,47 @@
-# PurePage — Privacy Policy
+# Privacy Policy — PurePage
 
 **Last updated: April 2026**
 
 ## Overview
 
-PurePage is a Chrome extension that strips any web page down to a clean, distraction-free reading view. This policy explains how the extension handles your data.
+PurePage is a Chrome extension that extracts and displays the main content of web pages in a clean reading view. This policy explains how the extension handles your data.
 
-## Data collection
+## Data Collected
 
-PurePage does **not** collect, store, transmit or share any personal data with third parties.
+PurePage stores the following data **locally in your browser only**:
 
-## How it works
+- Your reading preferences (theme, font style, font size, and CE highlight toggle)
+- The most recently extracted article (title, content, byline, and source URL), held temporarily in local storage while the reader view is open
 
-- When you click Open reader view, PurePage extracts the article content from the current tab using Mozilla's open source Readability.js library
-- The extracted content is stored temporarily in `chrome.storage.local` on your device only, to pass it to the reader view tab
-- Your reading preferences (theme, font, font size, CE highlights) are saved locally in `chrome.storage.local` and never leave your device
-- No page content or personal data is ever sent to any external server
+No browsing history, article content, or personal data is retained beyond your current session.
+
+## Data Storage
+
+All data is stored using Chrome's `storage.local` API. It never leaves your browser and is not accessible to any website or third party.
+
+Extracted article content is written to local storage when you open the reader view and is overwritten the next time you use the extension.
+
+## Data Sharing
+
+No data is collected, transmitted, or shared with any external server, service, or third party.
+
+## Third-Party Libraries
+
+PurePage bundles the following open-source libraries:
+
+- **Readability.js** by Mozilla (Apache 2.0) - used to extract article content from pages. It runs entirely within your browser and does not transmit any data.
+- **OpenDyslexic** font by Abelardo Gonzalez (SIL OFL 1.1) - an optional font for improved readability.
 
 ## Permissions
 
-| Permission | Reason |
-|---|---|
-| `activeTab` | To access the current tab's content for extraction |
-| `scripting` | To inject the Readability.js extraction script into the active page |
-| `storage` | To save your reading preferences and pass article content to the reader view |
+- **activeTab** - grants temporary access to the current tab when the popup is opened
+- **scripting** - used to inject the Readability library into the page to extract article content
+- **storage** - used to save your reading preferences and temporarily hold extracted article content
 
-## Third party libraries
+## Changes to This Policy
 
-PurePage bundles the following open source libraries, which run entirely in your browser:
-
-- **Readability.js** (Mozilla) — extracts article content from web pages
-- **OpenDyslexic** font — an optional reading font designed to improve readability for people with dyslexia
-
-Neither library transmits any data externally.
+This policy may be updated occasionally. The latest version will always be available at this URL.
 
 ## Contact
 
-PurePage is a tool built by the IT team at the Ellen MacArthur Foundation. For questions contact [it@ellenmacarthurfoundation.org](mailto:it@ellenmacarthurfoundation.org).
+For questions about this extension, open an issue on the GitHub repository.
