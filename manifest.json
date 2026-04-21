@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "PurePage",
+  "version": "1.0.0",
+  "description": "Strip any web page down to a clean, distraction-free reading view in one click.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16":  "icons/icon16.png",
+      "48":  "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16":  "icons/icon16.png",
+    "48":  "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["reader.html", "reader.css", "reader.js", "lib/Readability.js", "lib/OpenDyslexic-Regular.woff2"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

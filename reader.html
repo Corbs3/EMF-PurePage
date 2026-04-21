@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PurePage Reader</title>
+  <link rel="stylesheet" href="reader.css"/>
+</head>
+<body class="theme-light size-medium">
+
+  <div id="toolbar">
+    <div id="toolbar-left">
+      <div id="toolbar-logo">
+        <svg width="14" height="14" viewBox="0 0 36 36" fill="none">
+          <rect x="7" y="4" width="22" height="28" rx="3" fill="none" stroke="#D85A30" stroke-width="2.5"/>
+          <line x1="11" y1="12" x2="25" y2="12" stroke="#D85A30" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="11" y1="16" x2="25" y2="16" stroke="#F0997B" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="11" y1="20" x2="20" y2="20" stroke="#F0997B" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span id="toolbar-name">PurePage</span>
+      <span id="toolbar-url"></span>
+    </div>
+    <div id="toolbar-right">
+      <div id="theme-pills">
+        <button class="theme-pill active" data-theme="light">Light</button>
+        <button class="theme-pill" data-theme="sepia">Sepia</button>
+        <button class="theme-pill" data-theme="dark">Dark</button>
+      </div>
+      <div id="font-btns">
+        <button class="font-btn active" data-font="sans" style="font-family:sans-serif;">Sans</button>
+        <button class="font-btn" data-font="serif" style="font-family:Georgia,serif;">Serif</button>
+        <button class="font-btn" data-font="dyslexic">OpenDyslexic</button>
+      </div>
+      <div id="size-btns">
+        <button class="size-btn" data-size="small">A</button>
+        <button class="size-btn active" data-size="medium">A</button>
+        <button class="size-btn" data-size="large">A</button>
+      </div>
+      <button id="btn-ce" class="toolbar-btn active">CE terms</button>
+      <button id="btn-close" class="toolbar-btn">✕ Exit</button>
+    </div>
+  </div>
+
+  <div id="reader-wrap">
+    <div id="reader-content">
+      <div id="article-meta"></div>
+      <h1 id="article-title"></h1>
+      <div id="article-byline"></div>
+      <div id="article-body"></div>
+    </div>
+  </div>
+
+  <script src="reader.js"></script>
+</body>
+</html>

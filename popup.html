@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>PurePage</title>
+  <style>
+    :root {
+      --bg:      #FFFFFF;
+      --surface: #F8F8F8;
+      --border:  #F0F0F0;
+      --text:    #1A1A1A;
+      --text2:   #555555;
+      --text3:   #AAAAAA;
+      --coral:   #D85A30;
+      --coral-bg:#FAECE7;
+      --coral-text:#712B13;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { width:300px; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:13px; }
+
+    header { display:flex; align-items:center; gap:10px; padding:14px 16px 12px; border-bottom:1px solid var(--border); }
+    .logo { width:32px; height:32px; border-radius:8px; background:var(--coral-bg); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .brand-name { font-size:14px; font-weight:700; }
+    .brand-sub  { font-size:11px; color:var(--text3); margin-top:1px; }
+
+    .body { padding:14px 16px; }
+
+    .label { font-size:10px; font-weight:700; color:var(--text3); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:8px; }
+
+    .pill-row { display:flex; gap:6px; margin-bottom:16px; }
+    .pill { flex:1; padding:8px 6px; border-radius:8px; font-size:12px; font-weight:600; text-align:center; border:1px solid var(--border); color:var(--text3); cursor:pointer; transition:all 0.12s; background:var(--bg); }
+    .pill.active { background:var(--coral-bg); border-color:var(--coral); color:var(--coral-text); }
+    .pill:hover:not(.active) { border-color:var(--coral); color:var(--coral); }
+
+    .size-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+    .size-label { font-size:12px; color:var(--text2); }
+    .size-btns  { display:flex; gap:6px; }
+    .size-btn {
+      width:28px; height:28px; border-radius:7px; border:1px solid var(--border);
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer; background:var(--bg); transition:all 0.12s;
+    }
+    .size-btn.active { background:var(--coral-bg); border-color:var(--coral); }
+    .size-btn:hover:not(.active) { border-color:var(--coral); }
+
+    .toggle-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+    .toggle-label { font-size:12px; color:var(--text2); }
+    .toggle-hint  { font-size:10px; color:var(--text3); margin-top:1px; }
+    .toggle { width:34px; height:19px; border-radius:10px; background:var(--border); position:relative; cursor:pointer; border:none; transition:background 0.2s; flex-shrink:0; }
+    .toggle.on { background:var(--coral); }
+    .toggle::after { content:''; position:absolute; width:13px; height:13px; border-radius:50%; background:white; top:3px; left:3px; transition:transform 0.2s; }
+    .toggle.on::after { transform:translateX(15px); }
+
+    .btn-read { width:100%; padding:11px; background:var(--coral); color:white; border:none; border-radius:9px; font-size:13px; font-weight:700; cursor:pointer; transition:background 0.15s; }
+    .btn-read:hover { background:#C04E28; }
+
+    .status { font-size:11px; color:var(--text3); text-align:center; padding:10px 0 0; display:none; }
+    .status.visible { display:block; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg width="18" height="18" viewBox="0 0 36 36" fill="none">
+        <rect x="7" y="4" width="22" height="28" rx="3" fill="none" stroke="#D85A30" stroke-width="2"/>
+        <line x1="11" y1="12" x2="25" y2="12" stroke="#D85A30" stroke-width="2" stroke-linecap="round"/>
+        <line x1="11" y1="16" x2="25" y2="16" stroke="#F0997B" stroke-width="2" stroke-linecap="round"/>
+        <line x1="11" y1="20" x2="20" y2="20" stroke="#F0997B" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div>
+      <div class="brand-name">PurePage</div>
+      <div class="brand-sub">Clean reading view</div>
+    </div>
+  </header>
+
+  <div class="body">
+    <div class="label">Theme</div>
+    <div class="pill-row">
+      <button class="pill active" data-theme="light">Light</button>
+      <button class="pill" data-theme="sepia">Sepia</button>
+      <button class="pill" data-theme="dark">Dark</button>
+    </div>
+
+    <div class="size-row">
+      <div class="size-label">Font size</div>
+      <div class="size-btns">
+        <button class="size-btn" data-size="small" style="font-size:10px;color:var(--text3);">A</button>
+        <button class="size-btn active" data-size="medium" style="font-size:13px;color:var(--text2);">A</button>
+        <button class="size-btn" data-size="large" style="font-size:16px;color:var(--text2);">A</button>
+      </div>
+    </div>
+
+    <div class="size-row">
+      <div class="size-label">Font style</div>
+      <div class="pill-row" style="margin-bottom:0;gap:5px;">
+        <button class="pill active" data-font="sans" style="font-family:sans-serif;font-size:11px;">Sans</button>
+        <button class="pill" data-font="serif" style="font-family:Georgia,serif;font-size:11px;">Serif</button>
+        <button class="pill" data-font="dyslexic" style="font-size:11px;">OpenDyslexic</button>
+      </div>
+    </div>
+
+    <div class="toggle-row">
+      <div>
+        <div class="toggle-label">Highlight CE terms</div>
+        <div class="toggle-hint">Works with CEChecker term list</div>
+      </div>
+      <button class="toggle on" id="toggle-ce"></button>
+    </div>
+
+    <button class="btn-read" id="btn-read">Open reader view</button>
+    <div class="status" id="status">Opening reader…</div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
